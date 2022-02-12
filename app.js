@@ -12,6 +12,6 @@ app.get("/response", (req, res) => {
   res.send(req.query.search);
 });
 
-app.listen(PORT, () => {
-  console.log(`sever init in ${PORT} port`);
+app.listen(process.env.PORT || PORT, () => {
+  console.log(`sever init in ${process.env.PORT || PORT} port`);
 });
