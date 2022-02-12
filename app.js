@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/response", (req, res) => {
-  res.send(req.query.search);
+  res.send("response: " + req.query.search);
 });
 
 app.listen(process.env.PORT || PORT, () => {
