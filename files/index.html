@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Test XSS</title>
+  </head>
+  <body>
+    <div>
+      <label>
+        Password:
+        <input id="pass" type="text" />
+      </label>
+      <input id="login" type="button" value="login" />
+    </div>
+    <div id="response"></div>
+  </body>
+
+  <script>
+    let sensiveData = "my-sensive-data";
+    const url = "http://localhost:3000";
+
+    document.getElementById("login").addEventListener("click", () => {
+      const pass = document.getElementById("pass");
+      getSensiveData(pass.value);
+    });
+
+    function getSensiveData(pass) {
+      window.location.href = `${url}/response?search=${pass}`;
+    }
+  </script>
+</html>
