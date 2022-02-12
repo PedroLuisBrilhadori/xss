@@ -1,9 +1,12 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const PORT = 3000;
 
+console.log();
+
 app.get("/", (req, res) => {
-  res.sendFile("/users/pedro/programing/xss/files/index.html", (err) => {
+  res.sendFile(`${__dirname}/files/index.html`, (err) => {
     console.log("error for send file", err);
   });
 });
