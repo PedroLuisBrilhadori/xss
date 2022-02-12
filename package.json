@@ -1,4 +1,8 @@
 {
+  "name": "xss-example",
+  "scripts": {
+    "start": "node ./app.js"
+  },
   "dependencies": {
     "express": "^4.17.2"
   }
